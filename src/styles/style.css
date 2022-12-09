@@ -1,0 +1,413 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+  AppBar
+*/
+
+.app-bar {
+  padding: 8px 16px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.app-bar .app-bar__menu {
+  display: flex;
+  align-items: center;
+}
+
+.app-bar .app-bar__menu button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.app-bar .app-bar__brand {
+  display: flex;
+  align-items: center;
+}
+
+.app-bar .app-bar__brand img {
+  width: 145px;
+}
+
+.app-bar .app-bar__navigation {
+  position: absolute;
+  top: 50px;
+  left: -180px;
+  width: 150px;
+  transition: all 0.3s;
+  padding: 8px;
+  background-color: white;
+  overflow: hidden;
+}
+
+.app-bar .app-bar__navigation.open {
+  left: 0;
+}
+
+.app-bar .app-bar__navigation ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  padding: 8px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+/*
+  Main Content
+*/
+
+main {
+  padding: 32px;
+  flex: 1;
+}
+
+.content {
+  margin: 0 auto;
+  min-height: 100%;
+}
+
+.content .content__heading {
+  font-weight: normal;
+}
+
+/*
+  Movies
+*/
+
+.movies {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+/*
+  Movie Item
+*/
+
+.movie-item {
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.movie-item__header {
+  position: relative;
+}
+
+.movie-item .movie-item__header .movie-item__header__poster {
+  width: 100%;
+}
+
+.movie-item .movie-item__header .movie-item__header__rating {
+  position: absolute;
+  padding: 8px;
+  bottom: 20px;
+  left: 0;
+  display: inline-block;
+  background-color: black;
+  color: white;
+}
+
+.movie-item .movie-item__header .movie-item__header__rating .movie-item__header__rating__score {
+  margin-left: 10px;
+}
+
+.movie-item .movie-item__content {
+  padding: 16px;
+}
+
+.movie-item .movie-item__content h3 {
+  margin: 0 0 10px 0;
+}
+
+.movie-item .movie-item__content h3 a {
+  color: #db0000;
+  text-decoration: none;
+}
+
+.movie-item .movie-item__content p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+/*
+  Movie
+*/
+
+.movie {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 16px;
+}
+
+.movie .movie__poster {
+  width: 100%;
+  max-width: 400px;
+}
+
+.movie .movie__info h4 {
+  margin: 8px 0;
+}
+
+/*
+  Like
+*/
+
+.like {
+  font-size: 18px;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background-color: #db0000;
+  color: white;
+  border: 0;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+  Button
+*/
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #DB0000;
+  border: 1px solid #770000;
+  border-radius: 4px;
+ 
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+ 
+  cursor: pointer;
+  transition: .15s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #DB0000BB;
+}
+
+.btn:active {
+  background-color: #DB0000DD;
+}
+
+.btn:focus-visible {
+  outline: 3px solid #DB000055;
+}
+
+/* CREATE ROOM */
+
+.command-sign {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 100px;
+}
+
+.command-sign #command-sign-icon {
+  width: 250px;
+}
+
+.command-sign #command-sign-text {
+  padding-top: 30px;
+  font-size: 20px;
+}
+
+.command-sign #command-sign-text hr {
+  border: 2px solid rgba(43, 98, 224, 1);
+}
+
+.day-options {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 100px;
+}
+
+.day-options #day-options {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  width: 300px;
+}
+
+.day-options #day-options input {
+  margin-right: 10px;
+}
+
+form button, #submit-button {
+  height: 35px;
+  width: 125px;
+  border-radius: 30px;
+  background-color: rgba(43, 98, 224, 1);
+  border: 1px solid rgba(43, 98, 224, 1);
+  color: white;
+  box-shadow: 0 5px 10px grey;
+}
+
+form input {
+  height: 35px;
+  width: 300px;
+  border: 1px solid rgb(247, 247, 247);
+  border-radius: 30px;
+  box-shadow: 0 5px 10px grey;
+  margin-bottom: 15px;
+}
+
+#room-info #label, #input-form #create-button {
+  visibility: hidden;
+}
+
+#room-info #label #rooms-name-label {
+  margin-right: 80px;
+  padding-bottom: 30px;
+}
+
+.day-options #room-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.day-options #room-info #input-form, .day-options #room-info #input-form #date-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* HOMEPAGE */
+
+.join-room {
+  display: flex;
+  flex-direction: column;
+}
+
+/* DETAIL ROOM */
+
+.command-sign #room-description {
+  display: flex;
+  margin-top: 50px;
+}
+
+#room-description div {
+  padding: 15px 0 0 20px;
+}
+
+#room-description #event-description {
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+}
+
+#room-description img {
+  width: 80px;
+}
+
+#input-form {
+  display: grid;
+  grid-template-columns: 400px 400px 400px;
+  text-align: center;
+}
+
+.start-to-finish {
+  display: flex;
+}
+
+form #date {
+  height: 35px;
+  width: 400px;
+  margin: 40px 0 20px 0;
+  border-radius: 30px;
+  background-color: rgba(43, 98, 224, 1);
+  border: 1px solid rgba(43, 98, 224, 1);
+  color: white;
+  box-shadow: 0 5px 10px grey;
+}
+
+form #description {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.detile-room #submit-button {
+  margin: 20px 0 0 46.5%;
+}
+
+/* DETAIL-STATUS */
+#status_table {
+  width: 50%;
+}
+
+#status_table,
+tr,
+td {
+  border: 1px black solid;
+}
+
+/* DETAIL-RESULT */
+.schedule h5{
+  text-align: center;
+  background-color: #2B62E0;
+  border-radius: 10px;
+  color: white;
+  padding: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.hour-title{
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.hour {
+  display: flex;
+}
+
+.hour p{
+  padding: 8px;
+  border-radius: 10px;
+  border-width: 1px;
+  margin-top: 5px;
+  margin-right: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 15px;
+}
+
+.user_status>table {
+  background-color: aqua;
+  margin-left: auto;
+  margin-right: auto;
+}
